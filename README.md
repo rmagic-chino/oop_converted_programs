@@ -1,4 +1,4 @@
-- Code transition from procedural coding to OOP (Refer to the pictures above)
+- Code transition from procedural coding to OOP
 
 - OOP - Inheritance
 
