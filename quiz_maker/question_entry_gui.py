@@ -83,3 +83,12 @@ class QuestionEntryGUI(BaseGUI):
         self.option_d_entry.delete(0, tk.END)
         self.correct_option.set(None)
         
+    def _on_exit(self):
+        should_save = messagebox.askyesno(
+            "Exit",
+            "Do you want to save the questions before exiting?"
+        )
+        if should_save:
+            self.file_manager.save_to_file()
+        self.root.destroy()
+        
