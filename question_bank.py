@@ -19,3 +19,15 @@ class QuestionBank:
             not option_d or
             correct_option not in ['a', 'b', 'c', 'd']
         ):
+            return False
+        
+        question_data = {
+            'question': question_text,
+            'a': option_a,
+            'b': option_b,
+            'c': option_c,
+            'd': option_d,
+            'correct': correct_option
+        }
+        self.questions.append(question_data)
+        return True
