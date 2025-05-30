@@ -53,3 +53,8 @@ class QuizGUI:
             )
             self.logic.next_question()
      
+    def update_question(self, question_data):
+        self.question_label.config(text=question_data['q'])
+        options = ['a', 'b', 'c', 'd']
+        for i, option in enumerate(options):
+            self.answer_buttons[i].config(text=question_data[option])
