@@ -22,3 +22,23 @@ class QuizGUI:
             command=self.load_questions,
             font=("Arial", 14),
         ).pack(pady=10)
+        
+        self.question_label = tk.Label(
+            self.root, 
+            text="Press 'Load Questions' to start",
+            font=("Arial", 16),
+            bg="#111",
+            fg="white"
+        )
+        self.question_label.pack(pady=20)
+        
+        self.answer_buttons = []
+        for option in ['a', 'b', 'c', 'd']:
+            button = tk.Button(
+                self.root,
+                text=option.upper(),
+                width=30,
+                command=lambda opt=option: self.logic.check_answer(opt)
+            )
+            button.pack(pady=5)
+            self.answer_buttons.append(button)
