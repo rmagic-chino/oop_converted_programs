@@ -15,3 +15,26 @@ class QuestionEntryGUI(BaseGUI):
         self.option_d_entry = tk.Entry(self.root, width=60)
         self.correct_option = tk.StringVar()
         
+        self._build_form()
+        
+    def _build_form(self):
+        tk.Label(self.root, text="Enter your question:").pack()
+        self.question_text.pack()
+        
+        tk.Label(self.root, text="Option A:").pack()
+        self.option_a_entry.pack()
+        
+        tk.Label(self.root, text="Option B:").pack()
+        self.option_b_entry.pack()
+        
+        tk.Label(self.root, text="Option C:").pack()
+        self.option_c_entry.pack()
+        
+        tk.Label(self.root, text="Option D:").pack()
+        self.option_d_entry.pack()
+        
+        tk.Label(self.root, text="Correct Option:").pack()
+        radio_frame = tk.Frame(self.root)
+        radio_frame.pack()
+        
+        
