@@ -37,4 +37,24 @@ class QuestionEntryGUI(BaseGUI):
         radio_frame = tk.Frame(self.root)
         radio_frame.pack()
         
+        for option in ['a', 'b', 'c', 'd']:
+            tk.Radiobutton(
+                radio_frame,
+                text=option,
+                variable=self.correct_option,
+                value=option
+            ).pack(anchor='w')
+            
+        tk.Button(
+            self.root,
+            text="Add Question",
+            width=20,
+            command=self.submit_question  
+        ).pack(pady=10)
         
+        tk.Button(
+            self.root,
+            text="Exit",
+            width=20,
+            command=self._on_exit
+        ).pack()
