@@ -42,3 +42,14 @@ class QuizGUI:
             )
             button.pack(pady=5)
             self.answer_buttons.append(button)
+            
+    def load_questions(self):
+        questions = self.loader.load_from_file()
+        if questions:
+            self.logic = QuizLogic(
+                questions, 
+                on_question_change=self.update_question,
+                on_quiz_end=self.root.destroy
+            )
+            self.logic.next_question()
+     
