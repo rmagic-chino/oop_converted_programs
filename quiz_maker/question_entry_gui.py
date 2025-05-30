@@ -75,3 +75,11 @@ class QuestionEntryGUI(BaseGUI):
         else:
             messagebox.showerror("Error", "Failed to add question. Please check your inputs.")
             
+    def _clear_fields(self):
+        self.question_text.delete(0, tk.END)
+        self.option_a_entry.delete(0, tk.END)
+        self.option_b_entry.delete(0, tk.END)
+        self.option_c_entry.delete(0, tk.END)
+        self.option_d_entry.delete(0, tk.END)
+        self.correct_option.set(None)
+        
