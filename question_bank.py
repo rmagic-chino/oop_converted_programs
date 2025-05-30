@@ -31,3 +31,10 @@ class QuestionBank:
         }
         self.questions.append(question_data)
         return True
+    
+    def get_all_questions(self):
+        return self.questions
+    
+    def is_empty(self):
+        return len(self.questions) == 0
+    
