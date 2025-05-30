@@ -58,3 +58,7 @@ class QuizGUI:
         options = ['a', 'b', 'c', 'd']
         for i, option in enumerate(options):
             self.answer_buttons[i].config(text=question_data[option])
+            
+    def run(self):
+        self.root.mainloop()
+        
