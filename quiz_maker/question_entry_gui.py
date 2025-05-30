@@ -58,3 +58,20 @@ class QuestionEntryGUI(BaseGUI):
             width=20,
             command=self._on_exit
         ).pack()
+        
+    def submit_question(self):
+        is_added = self.question_bank.add_question(
+            self.question_text.get(),
+            self.option_a_entry.get(),
+            self.option_b_entry.get(),
+            self.option_c_entry.get(),
+            self.option_d_entry.get(),
+            self.correct_option.get()
+        )
+        
+        if is_added:
+            messagebox.showinfo("Success", "Question added successfully!")
+            self._clear_fields()
+        else:
+            messagebox.showerror("Error", "Failed to add question. Please check your inputs.")
+            
