@@ -15,4 +15,10 @@ class QuizGUI:
         
         self.setup_widgets()
         
-    
+    def setup_widgets(self):
+        tk.Button(
+            self.root, 
+            text="Load Questions",
+            command=self.load_questions,
+            font=("Arial", 14),
+        ).pack(pady=10)
